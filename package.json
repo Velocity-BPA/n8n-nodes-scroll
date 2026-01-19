@@ -1,0 +1,96 @@
+{
+  "name": "n8n-nodes-scroll",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for Scroll zkEVM L2 blockchain providing 19 resources and 180+ operations for account management, transactions, bridging, smart contracts, DeFi, and zkEVM-specific functionality.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-scroll.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-scroll#readme",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-scroll/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "scroll",
+    "zkevm",
+    "ethereum",
+    "blockchain",
+    "layer2",
+    "l2",
+    "web3",
+    "defi",
+    "smart-contracts",
+    "bridge",
+    "zk-rollup",
+    "zero-knowledge",
+    "evm"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "COMMERCIAL_LICENSE.md",
+    "LICENSING_FAQ.md",
+    "README.md"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/ScrollNetwork.credentials.js",
+      "dist/credentials/ScrollApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Scroll/Scroll.node.js",
+      "dist/nodes/Scroll/ScrollTrigger.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "ethers": "^6.9.0",
+    "graphql-request": "^6.1.0",
+    "axios": "^1.6.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.22.0",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3"
+  }
+}
